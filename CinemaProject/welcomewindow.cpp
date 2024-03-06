@@ -17,6 +17,16 @@ WelcomeWindow::~WelcomeWindow()
     delete ui;
 }
 
-void WelcomeWindow::setName(QString name){
+void WelcomeWindow::setName(QString name, int age){
     ui->label_out_name->setText(name);
+     ui->label_out_name->setText("Hello " + name + " " + QString::number(age));
+
+}
+
+WelcomeWindow::WelcomeWindow(QString name, int age, QWidget *parent)
+    : QWidget(parent) {
+    helloLabel = new QLabel(this);
+    QString ageString = QString::number(age);
+    QString greeting = "Hello " + name + " " + ageString;
+    helloLabel->setText(greeting);
 }

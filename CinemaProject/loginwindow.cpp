@@ -1,6 +1,7 @@
 #include "loginwindow.h"
 #include "ui_loginwindow.h"
 #include "Users.h"
+#include "welcomewindow.h"
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -31,6 +32,8 @@ void LoginWindow::on_Login_button_clicked()
         }
     }
 }
+
+WelcomeWindow *welcomeWindow = new WelcomeWindow(name, age);
 
 
 void LoginWindow::on_Register_button_clicked()
